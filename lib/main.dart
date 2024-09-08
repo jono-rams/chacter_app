@@ -4,7 +4,6 @@ import 'package:character_app/screens/home/home.dart';
 
 void main() {
   runApp(MaterialApp(
-    title: 'Character Selection',
     theme: primaryTheme,
     home: const Home(),
   ));
