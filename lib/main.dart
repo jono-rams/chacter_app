@@ -1,3 +1,4 @@
+import 'package:character_app/screens/create/create.dart';
 import 'package:flutter/material.dart';
 import 'package:character_app/theme.dart';
 import 'package:character_app/screens/home/home.dart';
@@ -5,7 +6,7 @@ import 'package:character_app/screens/home/home.dart';
 void main() {
   runApp(MaterialApp(
     theme: primaryTheme,
-    home: const Home(),
+    home: const Create(),
   ));
 }
 
