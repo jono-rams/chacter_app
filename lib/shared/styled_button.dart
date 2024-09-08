@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:chacter_app/theme.dart';
+import 'package:character_app/theme.dart';
 
 class StyledButton extends StatelessWidget {
   const StyledButton({

@@ -1,7 +1,7 @@
-import 'package:chacter_app/screens/home/character_card.dart';
-import 'package:chacter_app/shared/styled_button.dart';
+import 'package:character_app/screens/home/character_card.dart';
+import 'package:character_app/shared/styled_button.dart';
 import 'package:flutter/material.dart';
-import 'package:chacter_app/shared/styled_text.dart';
+import 'package:character_app/shared/styled_text.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});

@@ -90,12 +90,12 @@ BEGIN
         BLOCK "040904e4"
         BEGIN
             VALUE "CompanyName", "jonorams.org" "\0"
-            VALUE "FileDescription", "chacter_app" "\0"
+            VALUE "FileDescription", "character_app" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "chacter_app" "\0"
+            VALUE "InternalName", "character_app" "\0"
             VALUE "LegalCopyright", "Copyright (C) 2024 jonorams.org. All rights reserved." "\0"
-            VALUE "OriginalFilename", "chacter_app.exe" "\0"
-            VALUE "ProductName", "chacter_app" "\0"
+            VALUE "OriginalFilename", "character_app.exe" "\0"
+            VALUE "ProductName", "character_app" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

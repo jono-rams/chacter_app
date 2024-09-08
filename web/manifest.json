@@ -1,6 +1,6 @@
 {
-    "name": "chacter_app",
-    "short_name": "chacter_app",
+    "name": "character_app",
+    "short_name": "character_app",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

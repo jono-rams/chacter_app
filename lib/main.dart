@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:chacter_app/theme.dart';
-import 'package:chacter_app/screens/home/home.dart';
+import 'package:character_app/theme.dart';
+import 'package:character_app/screens/home/home.dart';
 
 void main() {
   runApp(MaterialApp(

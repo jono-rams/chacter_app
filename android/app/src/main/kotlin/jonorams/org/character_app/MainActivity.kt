@@ -1,4 +1,4 @@
-package jonorams.org.chacter_app
+package jonorams.org.character_app
 
 import io.flutter.embedding.android.FlutterActivity
 
