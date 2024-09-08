@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 class AppColors {
-  static const Color primaryColor = Color.fromRGBO(56, 24, 76, 1);
-  static const Color primaryAccent = Color.fromRGBO(56, 14, 126, 1);
+  static const Color primaryColor = Color.fromRGBO(76, 14, 126, 1);
+  static const Color primaryAccent = Color.fromRGBO(32, 6, 55, 1);
   static const Color secondaryColor = Color.fromRGBO(45, 45, 45, 1);
   static const Color secondaryAccent = Color.fromRGBO(35, 35, 35, 1);
   static const Color titleColor = Color.fromRGBO(200, 200, 200, 1);

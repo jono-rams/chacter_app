@@ -1,3 +1,4 @@
+import 'package:chacter_app/shared/styled_button.dart';
 import 'package:flutter/material.dart';
 import 'package:chacter_app/shared/styled_text.dart';
 
@@ -22,9 +23,9 @@ class _HomeState extends State<Home> {
             const StyledText(text: 'Character List'),
             const StyledHeadline(text: 'Character List'),
             const StyledTitle(text: 'Character List'),
-            FilledButton(
+            StyledButton(
               onPressed: () {},
-              child: const Text('Create New Character')),
+              child: const StyledHeadline(text: 'Create New Character')),
           ],
         ),
       ),
