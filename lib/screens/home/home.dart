@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:chacter_app/shared/styled_text.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -13,11 +14,19 @@ class _HomeState extends State<Home> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Your Characters'),
-        centerTitle: true,
       ),
       body: Container(
         padding: const EdgeInsets.all(16.0),
-        child: const Text('Home'),
+        child: Column(
+          children: [
+            const StyledText(text: 'Character List'),
+            const StyledHeadline(text: 'Character List'),
+            const StyledTitle(text: 'Character List'),
+            FilledButton(
+              onPressed: () {},
+              child: const Text('Create New Character')),
+          ],
+        ),
       ),
     );
   }

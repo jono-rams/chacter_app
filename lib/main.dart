@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:chacter_app/theme.dart';
 import 'package:chacter_app/screens/home/home.dart';
 
 void main() {
-  runApp(const MaterialApp(
+  runApp(MaterialApp(
     title: 'Character Selection',
-    home: Home(),
+    theme: primaryTheme,
+    home: const Home(),
   ));
 }
 
