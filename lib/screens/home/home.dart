@@ -1,3 +1,4 @@
+import 'package:character_app/screens/create/create.dart';
 import 'package:character_app/screens/home/character_card.dart';
 import 'package:character_app/shared/styled_button.dart';
 import 'package:flutter/material.dart';
@@ -32,7 +33,17 @@ class _HomeState extends State<Home> {
               ),
             ),
             StyledButton(
-              onPressed: () {},
+              onPressed: () async {
+                dynamic result = await Navigator.push(context, MaterialPageRoute(
+                  builder: (ctx) => const Create(),
+                ));
+
+                if(result != null) {
+                  setState(() {
+                    characters.add(result as Character);
+                  });
+                }
+                },
               child: const StyledHeadline(text: 'Create New Character')),
           ],
         ),

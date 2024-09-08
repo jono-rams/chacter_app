@@ -66,4 +66,11 @@ ThemeData primaryTheme = ThemeData(
     ),
     prefixIconColor: AppColors.textColor,
   ),
+
+  // dialog theme
+  dialogTheme: const DialogTheme(
+    backgroundColor: AppColors.secondaryAccent,
+    surfaceTintColor: Colors.transparent,
+  ),
+
 );

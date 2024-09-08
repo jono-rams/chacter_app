@@ -6,7 +6,7 @@ import 'package:character_app/screens/home/home.dart';
 void main() {
   runApp(MaterialApp(
     theme: primaryTheme,
-    home: const Create(),
+    home: const Home(),
   ));
 }
 

@@ -1,6 +1,7 @@
 import 'package:character_app/models/character.dart';
 import 'package:character_app/models/vocation.dart';
 import 'package:character_app/screens/create/vocation_card.dart';
+import 'package:character_app/screens/home/home.dart';
 import 'package:character_app/shared/styled_button.dart';
 import 'package:character_app/shared/styled_text.dart';
 import 'package:character_app/theme.dart';
@@ -44,23 +45,63 @@ class _CreateState extends State<Create> {
   void _handleSubmit() {
     if (_nameController.text.trim().isEmpty)
       {
-        // TODO: show error dialog
+        // show error dialog
+
+        showDialog(
+          context: context,
+          builder: (ctx) {
+            return AlertDialog(
+              title: const StyledHeadline(text: 'Missing Character Name'),
+              content: const StyledText(text: 'Every good RPG character needs a great name...'),
+              actions: [
+                StyledButton(
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  child: const StyledHeadline(text: 'Close'),
+                )
+              ],
+              actionsAlignment: MainAxisAlignment.center,
+            );
+          }
+        );
+
         return;
       }
     if (_sloganController.text.trim().isEmpty)
       {
-        // TODO: show error dialog
+        // show error dialog
+
+        showDialog(
+            context: context,
+            builder: (ctx) {
+              return AlertDialog(
+                title: const StyledHeadline(text: 'Missing Character Slogan'),
+                content: const StyledText(text: 'Remember to add a catchy saying...'),
+                actions: [
+                  StyledButton(
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    child: const StyledHeadline(text: 'Close'),
+                  )
+                ],
+                actionsAlignment: MainAxisAlignment.center,
+              );
+            }
+        );
+
         return;
       }
 
-    characters.add(
-      Character(
-        id: int.parse(uuid.v4()),
-        name: _nameController.text.trim(),
-        slogan: _sloganController.text.trim(),
-        vocation: selectedVocation,
-      )
+    Character char = Character(
+      id: uuid.v4(),
+      name: _nameController.text.trim(),
+      slogan: _sloganController.text.trim(),
+      vocation: selectedVocation,
     );
+
+    Navigator.pop(context, char);
   }
 
   @override
