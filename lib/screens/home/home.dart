@@ -1,9 +1,10 @@
 import 'package:character_app/screens/create/create.dart';
 import 'package:character_app/screens/home/character_card.dart';
+import 'package:character_app/services/character_store.dart';
 import 'package:character_app/shared/styled_button.dart';
 import 'package:flutter/material.dart';
 import 'package:character_app/shared/styled_text.dart';
-import 'package:character_app/models/character.dart';
+import 'package:provider/provider.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -25,24 +26,22 @@ class _HomeState extends State<Home> {
         child: Column(
           children: [
             Expanded(
-              child: ListView.builder(
-                itemCount: characters.length,
-                itemBuilder: (_, index) {
-                  return CharacterCard(character: characters[index],);
-                },
+              child: Consumer<CharacterStore>(
+                builder: (context, value, child) {
+                  return ListView.builder(
+                    itemCount: value.characters.length,
+                    itemBuilder: (_, index) {
+                      return CharacterCard(character: value.characters[index],);
+                    },
+                  );
+                }
               ),
             ),
             StyledButton(
-              onPressed: () async {
-                dynamic result = await Navigator.push(context, MaterialPageRoute(
-                  builder: (ctx) => const Create(),
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(
+                  builder: (ctx) => const CreateScreen(),
                 ));
-
-                if(result != null) {
-                  setState(() {
-                    characters.add(result as Character);
-                  });
-                }
                 },
               child: const StyledHeadline(text: 'Create New Character')),
           ],
