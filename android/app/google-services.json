@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "642736359146",
+    "project_id": "character-app-4e610",
+    "storage_bucket": "character-app-4e610.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:642736359146:android:7d4519a85c625328b23993",
+        "android_client_info": {
+          "package_name": "jonorams.org.character_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCY_N5bBw6j8clcsQ_TlT82EGVYJlyaFBA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
