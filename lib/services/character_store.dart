@@ -1,22 +1,46 @@
+import 'package:character_app/services/firestore_service.dart';
 import 'package:flutter/material.dart';
 import 'package:character_app/models/character.dart';
-import 'package:character_app/models/vocation.dart';
 
 class CharacterStore extends ChangeNotifier {
 
-  final List<Character> _characters = [
-    Character(id: '1', name: 'Klara', vocation: Vocation.wizard, slogan: 'Kapumf!'),
-    Character(id: '2', name: 'Jonny', vocation: Vocation.junkie, slogan: 'Light me up...'),
-    Character(id: '3', name: 'Crimson', vocation: Vocation.raider, slogan: 'Fire in the hole!'),
-    Character(id: '4', name: 'Shaun', vocation: Vocation.ninja, slogan: 'Alright then gang.'),
-  ];
+  final List<Character> _characters = [];
 
   get characters => _characters;
 
   // add character
   void addCharacter(Character character) {
+    FirestoreService.addCharacter(character);
+
     _characters.add(character);
     notifyListeners();
+  }
+
+  // save (update) character
+  Future<void> saveCharacter(Character character) async {
+    await FirestoreService.updateCharacter(character);
+
+    return;
+  }
+
+  // delete character
+  void removeCharacter(Character character) async {
+    await FirestoreService.deleteCharacter(character);
+    _characters.remove(character);
+    notifyListeners();
+  }
+
+  // initially fetch characters
+
+  void fetchCharactersOnce() async {
+    if(_characters.isEmpty) {
+      final snapshot = await FirestoreService.getCharactersOnce();
+
+      for (var doc in snapshot.docs) {
+        _characters.add(doc.data());
+      }
+      notifyListeners();
+    }
   }
 
 }

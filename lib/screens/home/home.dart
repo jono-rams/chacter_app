@@ -16,6 +16,13 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
 
   @override
+  void initState() {
+    super.initState();
+    Provider.of<CharacterStore>(context, listen: false)
+     .fetchCharactersOnce();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
