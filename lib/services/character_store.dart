@@ -1,6 +1,7 @@
 import 'package:character_app/services/firestore_service.dart';
 import 'package:flutter/material.dart';
 import 'package:character_app/models/character.dart';
+import 'package:character_app/models/skill.dart';
 
 class CharacterStore extends ChangeNotifier {
 
@@ -10,6 +11,13 @@ class CharacterStore extends ChangeNotifier {
 
   // add character
   void addCharacter(Character character) {
+    List<Skill> availableSkills = allSkills.where((skill) {
+      return skill.vocation == character.vocation;
+    }).toList();
+
+    character.updateSkill(availableSkills[0]);
+    character.saveState();
+
     FirestoreService.addCharacter(character);
 
     _characters.add(character);

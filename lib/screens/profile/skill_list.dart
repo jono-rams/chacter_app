@@ -25,12 +25,7 @@ class _SkillListState extends State<SkillList> {
       return skill.vocation == widget.character.vocation;
     }).toList();
 
-    if (widget.character.skills.isEmpty) {
-      selectedSkill = availableSkills[0];
-    }
-    if (widget.character.skills.isNotEmpty) {
-      selectedSkill = widget.character.skills.first;
-    }
+    selectedSkill = widget.character.skills.first;
 
     super.initState();
   }

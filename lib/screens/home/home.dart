@@ -1,5 +1,6 @@
 import 'package:character_app/screens/create/create.dart';
 import 'package:character_app/screens/home/character_card.dart';
+import 'package:character_app/screens/profile/profile.dart';
 import 'package:character_app/services/character_store.dart';
 import 'package:character_app/shared/styled_button.dart';
 import 'package:flutter/material.dart';
@@ -44,7 +45,15 @@ class _HomeState extends State<Home> {
                           Provider.of<CharacterStore>(context, listen: false)
                             .removeCharacter(value.characters[index]);
                         },
-                        child: CharacterCard(character: value.characters[index],),
+                        child: GestureDetector(
+                          onTap: () {
+                            value.characters[index].restoreState();
+                            Navigator.push(context, MaterialPageRoute(
+                              builder: (ctx) => Profile(character: value.characters[index]),
+                            ));
+                          },
+                          child: CharacterCard(character: value.characters[index],),
+                        ),
                       );
                     },
                   );
