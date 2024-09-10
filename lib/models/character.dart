@@ -24,7 +24,7 @@ class Character with Stats {
   int _pointsCopy = 0;
   Map<String, int> _statsCopy = {};
 
-  Set<Skill> _skillsCopy = {};
+  final Set<Skill> _skillsCopy = {};
 
   // getters
   bool get isFav => _isFav;
