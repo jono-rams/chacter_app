@@ -96,6 +96,8 @@ class Profile extends StatelessWidget {
                 Provider.of<CharacterStore>(context, listen: false)
                  .saveCharacter(character);
 
+                character.saveState();
+
                 // show snackbar
                 ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                   content: StyledHeadline(text: 'Character saved.'),

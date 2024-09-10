@@ -21,8 +21,10 @@ class Character with Stats {
   final String id;
   bool _isFav = false;
 
-  int pointsCopy = 0;
-  Map<String, int> statsCopy = {};
+  int _pointsCopy = 0;
+  Map<String, int> _statsCopy = {};
+
+  Set<Skill> _skillsCopy = {};
 
   // getters
   bool get isFav => _isFav;
@@ -80,8 +82,23 @@ class Character with Stats {
     // assign stats and points
     character.setStats(points: data['points'], stats: data['stats']);
 
+    character.saveState();
+
     return character;
 
+  }
+
+  void saveState() {
+    _pointsCopy = points;
+    _statsCopy = statsAsMap;
+
+    _skillsCopy.clear();
+    _skillsCopy.addAll(skills);
+  }
+
+  void restoreState() {
+    setStats(points: _pointsCopy, stats: _statsCopy);
+    updateSkill(_skillsCopy.first);
   }
 
 }
