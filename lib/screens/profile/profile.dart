@@ -1,4 +1,5 @@
 import 'package:character_app/models/character.dart';
+import 'package:character_app/screens/profile/heart.dart';
 import 'package:character_app/screens/profile/skill_list.dart';
 import 'package:character_app/screens/profile/stats_table.dart';
 import 'package:character_app/services/character_store.dart';
@@ -17,7 +18,10 @@ class Profile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: StyledTitle(text: character.name)
+        title: StyledTitle(text: character.name),
+        actions: [
+          Heart(character: character),
+        ],
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -30,9 +34,12 @@ class Profile extends StatelessWidget {
               color: AppColors.secondaryColor.withOpacity(0.3),
               child: Row(
                 children: [
-                  Image.asset('assets/img/vocations/${character.vocation.image}',
-                    width: 140,
-                    height: 140,
+                  Hero(
+                    tag: character.id.toString(),
+                    child: Image.asset('assets/img/vocations/${character.vocation.image}',
+                      width: 140,
+                      height: 140,
+                    ),
                   ),
                   const SizedBox(width: 20),
                   Expanded(
